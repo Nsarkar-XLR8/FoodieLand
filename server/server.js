@@ -10,6 +10,17 @@ app.use(cors());
 app.use('/api/auth', router);
 
 
+// ✅ API routes
+app.use("/api/meals", require("./routes/meals")); 
+// add your other routes here
+
+// ✅ Serve React frontend
+app.use(express.static(path.join(__dirname, "../client/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+});
+
 
 connectDB();
 const PORT = process.env.PORT || 5000;
