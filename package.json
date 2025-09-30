@@ -1,4 +1,9 @@
 {
+  "scripts": {
+  "start": "node server.js",
+  "build": "cd ../client && npm install && npm run build"
+}
+
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
     "cors": "^2.8.5",
